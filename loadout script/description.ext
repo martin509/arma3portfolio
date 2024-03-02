@@ -1,0 +1,9 @@
+respawnOnStart = -1;
+respawn=3;
+enableDebugConsole=1;
+
+class Extended_Init_EventHandlers {
+ class Man {
+  postInit = "_this spawn (compile preprocessFileLineNumbers 'loadout\unit_init.sqf')";
+ };
+};
