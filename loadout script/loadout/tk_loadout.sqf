@@ -72,10 +72,10 @@ tkAT = [
 	["CUP_launch_RPG7V", "RPGScopes", 4], 1
 ];
 tkATAmmo = [
-	"CUP_OG7_M", 1,
+	"CUP_OG7_M", 2,
 	"CUP_PG7V_M", 2,
 	"CUP_PG7VL_M", 1,
-	"CUP_PG7VM_M", 1
+	"CUP_PG7VM_M", 2
 ];
 
 tkLAT = [
@@ -121,7 +121,9 @@ tkUniforms = [
 tkVests = [
 	"CUP_V_O_TK_Vest_1", 6,
 	"CUP_V_O_SLA_M23_1_BRN", 2,
-	"CUP_V_O_SLA_M23_1_OD", 2
+	"CUP_V_O_SLA_M23_1_OD", 2,
+	"CUP_V_I_RACS_Carrier_Rig_wdl_2", 1,
+	"CUP_V_B_PASGT_OD", 2
 ];
 
 
@@ -133,10 +135,19 @@ tkHelmets = [
 ];
 
 tkHats = [
-	"CUP_H_PMC_Cap_Tan", 0.5,
+	"CUP_H_PMC_Cap_Tan", 1,
+	"H_Cap_oli", 1.25,
+	"usm_bdu_cap_taki", 0.75,
+	"usm_bdu_cap_odg", 1,
+	//caps: 4
 	"H_Booniehat_khk", 4,
-	"H_Cap_oli", 0.5,
-	"usm_bdu_cap_taki", 1
+	"usm_bdu_boonie_odg", 2.25,
+	"usm_bdu_boonie_taki", 1.75,
+	//boonies: 8
+	
+	"usm_headwrap_odg1", 0.5,
+	"usm_headwrap_odg2", 0.5
+	//headwraps: 1 
 ];
 
 tkBackpacks = [
@@ -153,12 +164,14 @@ tkMedBackpacks = [
 	"CUP_B_TK_Medic_Desert", 1
 ];
 
-tkBasicMedical = [ //4 items per FAK, 2 bandage, 1 tourniquet, 1 morphine
+tkBasicMedical = [ //avg 8 items per basic med
 	"ACE_fieldDressing", 2,
-	"ACE_elasticBandage", 1.5,
-	"ACE_packingBandage", 1.5,
-	"ACE_tourniquet", 1.25,
-	"ACE_morphine", 0.75
+	"ACE_elasticBandage", 1.75,
+	"ACE_packingBandage", 1.75,
+	"ACE_tourniquet", 1.5,
+	"ACE_morphine", 0.75,
+	"ACE_splint", 0.15,
+	"ACE_salineIV_250", 0.1
 ];
 
 tkAdvMedical = [ //for medics, who get.. let's say 20 items @ random
@@ -263,42 +276,42 @@ tkSnipers_West = [
 
 loadoutObjTK = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 
-loadoutObjTK setVariable ["unitNames", createHashMapFromArray tkUnitNames];
-loadoutObjTK setVariable ["loadoutTypes", tkloadoutTypes];
+loadoutObjTK setVariable ["unitNames", createHashMapFromArray tkUnitNames, true];
+loadoutObjTK setVariable ["loadoutTypes", tkloadoutTypes, true];
 
-loadoutObjTK setVariable ["LATChance", tkLATChance];
-loadoutObjTK setVariable ["pistolChance", tkPistolChance];
-loadoutObjTK setVariable ["helmetChance", tkHelmetChance];
+loadoutObjTK setVariable ["LATChance", tkLATChance, true];
+loadoutObjTK setVariable ["pistolChance", tkPistolChance, true];
+loadoutObjTK setVariable ["helmetChance", tkHelmetChance, true];
 
-loadoutObjTK setVariable ["vests", tkVests];
-loadoutObjTK setVariable ["uniforms", tkUniforms];
-loadoutObjTK setVariable ["helmets", tkHelmets];
-loadoutObjTK setVariable ["hats", tkHats];
-loadoutObjTK setVariable ["backpacks", tkBackpacks];
-loadoutObjTK setVariable ["ATbackpacks", tkATBackpacks];
-loadoutObjTK setVariable ["medbackpacks", tkMedBackpacks];
+loadoutObjTK setVariable ["vests", tkVests, true];
+loadoutObjTK setVariable ["uniforms", tkUniforms, true];
+loadoutObjTK setVariable ["helmets", tkHelmets, true];
+loadoutObjTK setVariable ["hats", tkHats, true];
+loadoutObjTK setVariable ["backpacks", tkBackpacks, true];
+loadoutObjTK setVariable ["ATbackpacks", tkATBackpacks, true];
+loadoutObjTK setVariable ["medbackpacks", tkMedBackpacks, true];
 
-loadoutObjTK setVariable ["SVDScopes", tkSVDScopes];
-loadoutObjTK setVariable ["AKScopes", tkAKScopes];
-loadoutObjTK setVariable ["PicaScopes", tkPicaScopes];
-loadoutObjTK setVariable ["RPGScopes", tkRPGScopes];
+loadoutObjTK setVariable ["SVDScopes", tkSVDScopes, true];
+loadoutObjTK setVariable ["AKScopes", tkAKScopes, true];
+loadoutObjTK setVariable ["PicaScopes", tkPicaScopes, true];
+loadoutObjTK setVariable ["RPGScopes", tkRPGScopes, true];
 
-loadoutObjTK setVariable ["medical", tkBasicMedical];
-loadoutObjTK setVariable ["advmedical", tkAdvMedical];
-loadoutObjTK setVariable ["grenades", tkGrenades];
-loadoutObjTK setVariable ["smoke", tkSmoke];
-loadoutObjTK setVariable ["colouredSmoke", tkColouredSmoke];
-loadoutObjTK setVariable ["explosives", tkExplosives];
-loadoutObjTK setVariable ["AT", tkAT];
-loadoutObjTK setVariable ["ATAmmo", tkATAmmo];
-loadoutObjTK setVariable ["AA", tkAA];
-loadoutObjTK setVariable ["LAT", tkLAT];
+loadoutObjTK setVariable ["medical", tkBasicMedical, true];
+loadoutObjTK setVariable ["advmedical", tkAdvMedical, true];
+loadoutObjTK setVariable ["grenades", tkGrenades, true];
+loadoutObjTK setVariable ["smoke", tkSmoke, true];
+loadoutObjTK setVariable ["colouredSmoke", tkColouredSmoke, true];
+loadoutObjTK setVariable ["explosives", tkExplosives, true];
+loadoutObjTK setVariable ["AT", tkAT, true];
+loadoutObjTK setVariable ["ATAmmo", tkATAmmo, true];
+loadoutObjTK setVariable ["AA", tkAA, true];
+loadoutObjTK setVariable ["LAT", tkLAT, true];
 
-loadoutObjTK setVariable ["pistols", tkPistols];
-loadoutObjTK setVariable ["TLrifles", [tkTLRifles_Soviet, tkTLRifles_West]];
-loadoutObjTK setVariable ["rifles", [tkRifles_Soviet, tkRifles_West]];
-loadoutObjTK setVariable ["GLs", [tkGLs_Soviet, tkGLs_West]];
-loadoutObjTK setVariable ["MGs", [tkMGs_Soviet, tkMGs_West]];
-loadoutObjTK setVariable ["snipers", [tkSnipers_Soviet, tkSnipers_West]];
+loadoutObjTK setVariable ["pistols", tkPistols, true];
+loadoutObjTK setVariable ["TLrifles", [tkTLRifles_Soviet, tkTLRifles_West], true];
+loadoutObjTK setVariable ["rifles", [tkRifles_Soviet, tkRifles_West], true];
+loadoutObjTK setVariable ["GLs", [tkGLs_Soviet, tkGLs_West], true];
+loadoutObjTK setVariable ["MGs", [tkMGs_Soviet, tkMGs_West], true];
+loadoutObjTK setVariable ["snipers", [tkSnipers_Soviet, tkSnipers_West], true];
 
 factionLoadoutMap set ["CUP_O_TK", loadoutObjTK];

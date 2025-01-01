@@ -16,6 +16,7 @@ tafUnitNames = [
 	["Rifleman (AT Assistant)", "ATAssist"],
 	["Autorifleman Assistant", "MGAssist"],
 	["Machinegunner Assistant", "MGAssist"],
+	["Radio Operator", "RTO"],
 	
 	["Vehicle Crewman", "LEAVE"],
 	["Officer", "LEAVE"],
@@ -128,6 +129,10 @@ tafHats = [
 
 tafBackpacks = [
 	"CUP_B_AlicePack_OD", 1
+];
+
+tafRadioBackpacks = [
+	"usm_pack_st128_prc77", 1
 ];
 
 tafATBackpacks = [
@@ -251,48 +256,50 @@ tafSnipers_West = [
 
 loadoutObjtaf = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 
-loadoutObjtaf setVariable ["unitNames", createHashMapFromArray tafUnitNames];
-loadoutObjtaf setVariable ["loadoutTypes", tafloadoutTypes];
+loadoutObjtaf setVariable ["unitNames", createHashMapFromArray tafUnitNames, true];
+loadoutObjtaf setVariable ["loadoutTypes", tafloadoutTypes, true];
 
-loadoutObjtaf setVariable ["helmetChance", tafHelmetChance];
-loadoutObjtaf setVariable ["ammoMultiplier",tafAmmoMultiplier];
-loadoutObjtaf setVariable ["medicalMultiplier",tafMedicalMultiplier];
-loadoutObjtaf setVariable ["LATChance", tafLATChance];
-loadoutObjtaf setVariable ["pistolChance", tafPistolChance];
-loadoutObjtaf setVariable ["TLGLChance", tafTLGLChance];
+loadoutObjtaf setVariable ["helmetChance", tafHelmetChance, true];
+loadoutObjtaf setVariable ["ammoMultiplier", tafAmmoMultiplier, true];
+loadoutObjtaf setVariable ["medicalMultiplier", tafMedicalMultiplier, true];
+loadoutObjtaf setVariable ["LATChance", tafLATChance, true];
+loadoutObjtaf setVariable ["pistolChance", tafPistolChance, true];
+loadoutObjtaf setVariable ["TLGLChance", tafTLGLChance, true];
 
-loadoutObjtaf setVariable ["vests", tafVests];
-loadoutObjtaf setVariable ["mgvests", tafMGVests];
-loadoutObjtaf setVariable ["tlvests", tafTLVests];
-loadoutObjtaf setVariable ["medvests", tafMedVests];
-loadoutObjtaf setVariable ["uniforms", tafUniforms];
-loadoutObjtaf setVariable ["hats", tafHats];
-loadoutObjtaf setVariable ["helmets", tafHelmets];
-loadoutObjtaf setVariable ["backpacks", tafBackpacks];
-loadoutObjtaf setVariable ["ATbackpacks", tafATBackpacks];
+loadoutObjtaf setVariable ["vests", tafVests, true];
+loadoutObjtaf setVariable ["mgvests", tafMGVests, true];
+loadoutObjtaf setVariable ["tlvests", tafTLVests, true];
+loadoutObjtaf setVariable ["medvests", tafMedVests, true];
+loadoutObjtaf setVariable ["uniforms", tafUniforms, true];
+loadoutObjtaf setVariable ["hats", tafHats, true];
+loadoutObjtaf setVariable ["helmets", tafHelmets, true];
 
-loadoutObjtaf setVariable ["SVDScopes", tafSVDScopes];
-loadoutObjtaf setVariable ["AKScopes", tafAKScopes];
-loadoutObjtaf setVariable ["PicaScopes", tafPicaScopes];
-loadoutObjtaf setVariable ["RPGScopes", tafRPGScopes];
+loadoutObjtaf setVariable ["backpacks", tafBackpacks, true];
+loadoutObjtaf setVariable ["ATbackpacks", tafATBackpacks, true];
+loadoutObjtaf setVariable ["RTObackpacks", tafRadioBackpacks, true];
 
-loadoutObjtaf setVariable ["medical", tafBasicMedical];
-loadoutObjtaf setVariable ["advmedical", tafAdvMedical];
-loadoutObjtaf setVariable ["grenades", tafGrenades];
-loadoutObjtaf setVariable ["smoke", tafSmoke];
-loadoutObjtaf setVariable ["colouredSmoke", tafColouredSmoke];
-loadoutObjtaf setVariable ["explosives", tafExplosives];
-loadoutObjtaf setVariable ["AT", tafAT];
-loadoutObjtaf setVariable ["ATAmmo", tafATAmmo];
-loadoutObjtaf setVariable ["AA", tafAA];
-loadoutObjtaf setVariable ["LAT", tafLAT];
+loadoutObjtaf setVariable ["SVDScopes", tafSVDScopes, true];
+loadoutObjtaf setVariable ["AKScopes", tafAKScopes, true];
+loadoutObjtaf setVariable ["PicaScopes", tafPicaScopes, true];
+loadoutObjtaf setVariable ["RPGScopes", tafRPGScopes, true];
 
-loadoutObjtaf setVariable ["pistols", tafPistols];
-loadoutObjtaf setVariable ["TLrifles", [tafTLRifles_Soviet, tafTLRifles_West]];
-loadoutObjtaf setVariable ["rifles", [tafRifles_Soviet, tafRifles_West]];
-loadoutObjtaf setVariable ["carbines", [tafCarbines_Soviet, tafCarbines_West]];
-loadoutObjtaf setVariable ["GLs", [tafGLs_Soviet, tafGLs_West]];
-loadoutObjtaf setVariable ["MGs", [tafMGs_Soviet, tafMGs_West]];
-loadoutObjtaf setVariable ["snipers", [tafSnipers_Soviet, tafSnipers_West]];
+loadoutObjtaf setVariable ["medical", tafBasicMedical, true];
+loadoutObjtaf setVariable ["advmedical", tafAdvMedical, true];
+loadoutObjtaf setVariable ["grenades", tafGrenades, true];
+loadoutObjtaf setVariable ["smoke", tafSmoke, true];
+loadoutObjtaf setVariable ["colouredSmoke", tafColouredSmoke, true];
+loadoutObjtaf setVariable ["explosives", tafExplosives, true];
+loadoutObjtaf setVariable ["AT", tafAT, true];
+loadoutObjtaf setVariable ["ATAmmo", tafATAmmo, true];
+loadoutObjtaf setVariable ["AA", tafAA, true];
+loadoutObjtaf setVariable ["LAT", tafLAT, true];
+
+loadoutObjtaf setVariable ["pistols", tafPistols, true];
+loadoutObjtaf setVariable ["TLrifles", [tafTLRifles_Soviet, tafTLRifles_West], true];
+loadoutObjtaf setVariable ["rifles", [tafRifles_Soviet, tafRifles_West], true];
+loadoutObjtaf setVariable ["carbines", [tafCarbines_Soviet, tafCarbines_West], true];
+loadoutObjtaf setVariable ["GLs", [tafGLs_Soviet, tafGLs_West], true];
+loadoutObjtaf setVariable ["MGs", [tafMGs_Soviet, tafMGs_West], true];
+loadoutObjtaf setVariable ["snipers", [tafSnipers_Soviet, tafSnipers_West], true];
 
 factionLoadoutMap set ["B_TAF", loadoutObjtaf];

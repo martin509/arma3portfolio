@@ -2,6 +2,16 @@ respawnOnStart = -1;
 respawn=3;
 enableDebugConsole=1;
 
+class CfgFunctions {
+    class martin {
+        class loadout {
+            class unitInit {
+                description = "Initialize unit loadout";
+            };
+        };
+    };
+};
+
 class Extended_Init_EventHandlers {
  class Man {
   postInit = "_this spawn (compile preprocessFileLineNumbers 'loadout\unit_init.sqf')";
