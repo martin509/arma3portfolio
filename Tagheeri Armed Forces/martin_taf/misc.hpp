@@ -1,6 +1,8 @@
 //file for various small configs
 
 class CfgRecoils{
+	class Default;
+	class recoil_default : Default {};
 	class recoil_TAF_Galil
 	{              
 		kickBack[] = {0.034,0.0585};
@@ -165,7 +167,7 @@ class CfgWeapons{
 	class CUP_arifle_GALIL_BASE;
 	
 	class CUP_arifle_Galil_black : CUP_arifle_GALIL_BASE {
-		recoil="recoil_TAF_Galil"
+		recoil="recoil_TAF_Galil";
 	};
 	
 	class CUP_arifle_Galil_556_black : CUP_arifle_GALIL_BASE {

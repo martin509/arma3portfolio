@@ -1,0 +1,16 @@
+{
+	"title": "Tagheeri Armed Forces",
+	"name": "TAF",
+	"author": "Martin509",
+	"version": "1.3",
+	"buildPath": "build",
+	"privateKey": "",
+	"serverDirs": [],
+	"serverUse32bit": false,
+	"clientDirs": [
+		"/martin_taf",
+		"/taf_aml90"
+	],
+	"clientMods": [],
+	"ftpConnection": {}
+}

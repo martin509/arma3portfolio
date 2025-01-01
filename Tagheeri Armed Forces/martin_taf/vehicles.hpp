@@ -832,7 +832,7 @@
 		scope = 2;
 		side = 1;
 		faction = "B_TAF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		displayName = "RG-31 Nyala M2";
 		crew = "B_TAF_rifleman_SF";
 		hiddenSelections[] = {"camo1", "camo2"};
@@ -928,7 +928,7 @@
 		scope = 2;
 		side = 1;
 		faction = "B_TAF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		displayName = "RG-31 Mk5E M2";
 		crew = "B_TAF_rifleman_SF";
 		hiddenSelections[] = {"camo1", "camo2"};
@@ -1306,7 +1306,7 @@
 		faction = "B_TAF";
 		displayName = "Land Rover 110 (Transport)";
 		crew = "B_TAF_rifleman_SF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		hiddenSelections[] = {"camo1", "camo2"};
 		hiddenSelectionsTextures[] = {"martin_taf\lr\lr_taf_base_co.paa", "martin_taf\lr\lr_taf_spec_co.paa"};
 		
@@ -1393,7 +1393,7 @@
 		faction = "B_TAF";
 		displayName = "Land Rover 110 (M2)";
 		crew = "B_TAF_rifleman_SF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		hiddenSelections[] = {"camo1"};
 		hiddenSelectionsTextures[] = {"martin_taf\lr\lr_taf_base_co.paa"};
 		
@@ -1479,7 +1479,7 @@
 		faction = "B_TAF";
 		displayName = "Land Rover 110 (SPG-9)";
 		crew = "B_TAF_rifleman_SF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		hiddenSelections[] = {"camo1"};
 		hiddenSelectionsTextures[] = {"martin_taf\lr\lr_taf_base_co.paa"};
 		
@@ -1565,7 +1565,7 @@
 		faction = "B_TAF";
 		displayName = "Land Rover 110 (Ambulance)";
 		crew = "B_TAF_rifleman_SF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		hiddenSelections[] = {"camo1"};
 		hiddenSelectionsTextures[] = {"martin_taf\lr\lr_taf_base_co.paa"};
 		
@@ -2201,7 +2201,7 @@
 		faction = "B_TAF";
 		displayName = "Tatra T810 (Covered)";
 		crew = "B_TAF_rifleman_SF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		hiddenSelections[] = {"camo1"};
 		hiddenSelectionsTextures[] = {"martin_taf\t810\cabin_co_NOFLAG.paa"};
 		
@@ -2287,7 +2287,7 @@
 		faction = "B_TAF";
 		displayName = "Tatra T810 (Fuel)";
 		crew = "B_TAF_rifleman_SF";
-		editorSubcategory = "TAF_MRAP"
+		editorSubcategory = "TAF_MRAP";
 		hiddenSelections[] = {"camo1"};
 		hiddenSelectionsTextures[] = {"martin_taf\t810\cabin_co_NOFLAG.paa"};
 		
@@ -2295,27 +2295,16 @@
 
 	//Hiluxes
 	
-	class CUP_Hilux_unarmed_Base;
 	class CUP_Hilux_Base : Car_F{
+		class EventHandlers;
 		class Turrets : Turrets {
-			class MainTurret : MainTurret{
-			};
+			class MainTurret : MainTurret{};
+			
 		};
 	};
+	class CUP_Hilux_unarmed_Base;
 
-    class CUP_Hilux_unarmed_Base_OCimport_01 : CUP_Hilux_unarmed_Base { scope = 0; class EventHandlers; class Turrets; };
-    class CUP_Hilux_unarmed_Base_OCimport_02 : CUP_Hilux_unarmed_Base_OCimport_01 { 
-        class EventHandlers; 
-        class Turrets : Turrets {
-            class CargoTurret_01;
-            class CargoTurret_02;
-            class CargoTurret_03;
-            class CargoTurret_04;
-        };
-    };
-
-    class TAF_Hilux_Police : CUP_Hilux_unarmed_Base_OCimport_02 {
-        author = "Martin";
+    class TAF_Hilux_Police : CUP_Hilux_unarmed_Base {
         scope = 2;
         scopeCurator = 2;
         displayName = "Hilux";
@@ -2323,14 +2312,14 @@
         faction = "B_TAF_Police";
         crew = "B_TAF_policeman";
 
-        class Turrets : Turrets {
+        /*class Turrets : Turrets {
             class CargoTurret_01 : CargoTurret_01 { gunnerType = ""; };
             class CargoTurret_02 : CargoTurret_02 { gunnerType = ""; };
             class CargoTurret_03 : CargoTurret_03 { gunnerType = ""; };
             class CargoTurret_04 : CargoTurret_04 { gunnerType = ""; };
-        };
+        };*/
 
-        class EventHandlers : EventHandlers {
+        class EventHandlers {
             class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
 
             class ALiVE_orbatCreator {
@@ -2387,7 +2376,6 @@
     };
 	
     class TAF_Hilux_Unarmed : TAF_Hilux_Police {
-        author = "Martin";
         scope = 2;
         scopeCurator = 2;
         displayName = "Hilux";
@@ -2399,12 +2387,12 @@
 			"B_TAF_rifleman"
 		};
 
-        class Turrets : Turrets {
+        /*class Turrets : Turrets {
             class CargoTurret_01 : CargoTurret_01 { gunnerType = ""; };
             class CargoTurret_02 : CargoTurret_02 { gunnerType = ""; };
             class CargoTurret_03 : CargoTurret_03 { gunnerType = ""; };
             class CargoTurret_04 : CargoTurret_04 { gunnerType = ""; };
-        };
+        };*/
 
         hiddenSelectionsTextures[] = {"\CUP\WheeledVehicles\CUP_WheeledVehicles_Hilux\data\v2\Body_camo_3_CO.paa"};
 		textureList[]=
@@ -2463,14 +2451,14 @@
 
     };
 	
-	class CUP_Hilux_M2_Base;
-    class CUP_Hilux_M2_Base_OCimport_01 : CUP_Hilux_M2_Base { scope = 0; class EventHandlers; class Turrets; };
-    class CUP_Hilux_M2_Base_OCimport_02 : CUP_Hilux_M2_Base_OCimport_01 { 
-        class EventHandlers; 
-        class Turrets : Turrets {
-            class MainTurret;
-        };
-    };
+	class CUP_Hilux_M2_Base : CUP_Hilux_Base {
+		class EventHandlers; 
+		class Turrets : Turrets {
+			class MainTurret : MainTurret {
+				
+			};
+		};
+	}
 	
 	class CUP_Hilux_DSHKM_Base : CUP_Hilux_Base{
 		class Turrets : Turrets {
@@ -2482,7 +2470,7 @@
 	
 	class TAF_Hilux_DSHKM : CUP_Hilux_DSHKM_Base {
 		_generalMacro = "CUP_I_Hilux_DSHKM_TK";
-		author = "Martin";
+
         scope = 2;
         scopeCurator = 2;
         displayName = "Hilux (DShKM)";
@@ -2563,8 +2551,7 @@
 		};
 	};
 	
-	class TAF_Hilux_Armed : CUP_Hilux_M2_Base_OCimport_02 {
-        author = "Martin";
+	class TAF_Hilux_Armed : CUP_Hilux_M2_Base {
         scope = 2;
         scopeCurator = 2;
         displayName = "Hilux (M2)";
@@ -2642,17 +2629,14 @@
 
     };
 	
-	class CUP_Hilux_zu23_Base;
-    class CUP_Hilux_zu23_Base_OCimport_01 : CUP_Hilux_zu23_Base { scope = 0; class EventHandlers; class Turrets; };
-    class CUP_Hilux_zu23_Base_OCimport_02 : CUP_Hilux_zu23_Base_OCimport_01 { 
-        class EventHandlers; 
+	class CUP_Hilux_zu23_Base : CUP_Hilux_Base {
+		class EventHandlers; 
         class Turrets : Turrets {
             class MainTurret;
         };
-    };
+	};
 	
-	class TAF_Hilux_zu23 : CUP_Hilux_zu23_Base_OCimport_02 {
-        author = "Martin";
+	class TAF_Hilux_zu23 : CUP_Hilux_zu23_Base {
         scope = 2;
         scopeCurator = 2;
         displayName = "Hilux (ZU-23-2)";
@@ -2748,3 +2732,165 @@
         ALiVE_orbatCreator_texture = "Camo";
 
     };
+
+	class CUP_Hilux_SPG9_Base : CUP_Hilux_Base {
+		class EventHandlers;
+		class Turrets : Turrets {
+			class MainTurret;
+		};
+	};
+
+	class TAF_Hilux_SPG9 : CUP_Hilux_SPG9_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Hilux (SPG-9)";
+        side = 1;
+        faction = "B_TAF";
+        crew = "B_TAF_rifleman";
+		
+		typicalCargo[]=
+		{
+			"B_TAF_rifleman"
+		};
+		
+		hiddenSelectionsTextures[] = {"\CUP\WheeledVehicles\CUP_WheeledVehicles_Hilux\data\v2\Body_camo_3_CO.paa"};
+		textureList[]=
+		{
+			"Olive",
+			1
+		};
+
+        /*class EventHandlers : EventHandlers {
+            class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+
+            class ALiVE_orbatCreator {
+                init = "if (local (_this select 0)) then {_onSpawn = {sleep 0.3; _unit = _this select 0;_unit setObjectTextureGlobal [0,'\CUP\WheeledVehicles\CUP_WheeledVehicles_Hilux\data\v2\Body_camo_3_CO.paa'];};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+            };
+
+        };*/
+		
+		class TransportWeapons {
+			class _xx_Galil {
+				weapon = "CUP_arifle_Galil_556_black";
+				count = "1*1";
+			};
+		};
+		
+		class TransportMagazines {
+			class _xx_Galil_mag {
+				magazine = "CUP_35Rnd_556x45_Galil_Mag";
+				count = "8*1";
+			};
+			
+			class _xx_Chemlight {
+				magazine = "Chemlight_yellow";
+				count = "2*1";
+			};
+			
+			class _xx_Smoke {
+				magazine = "SmokeShell";
+				count = "2*1";
+			};
+		};
+		
+		class TransportItems {
+			class _xx_FAK {
+				name = "FirstAidKit";
+				count = "4*1";
+			};
+			
+			class _xx_Medikit {
+				name = "Medikit";
+				count = "1*1";
+			};
+			
+			class _xx_ToolKit {
+				name = "ToolKit";
+				count = "1*1";
+			};
+		};
+		
+		class TransportBackpacks {
+		};
+
+        // custom attributes (do not delete)
+        ALiVE_orbatCreator_owned = 1;
+        ALiVE_orbatCreator_texture = "Camo";
+	};
+
+	class CUP_Hilux_MLRS_Base : CUP_Hilux_Base {
+		class EventHandlers;
+		class Turrets : Turrets {
+			class MainTurret;
+		};
+	};
+
+	class TAF_Hilux_MLRS : CUP_Hilux_MLRS_Base {
+		scope = 2;
+        scopeCurator = 2;
+        displayName = "Hilux (MLRS))";
+        side = 1;
+        faction = "B_TAF";
+		editorSubcategory = "EdSubcat_Artillery";
+        crew = "B_TAF_rifleman";
+		
+		typicalCargo[]=
+		{
+			"B_TAF_rifleman"
+		};
+		
+		hiddenSelectionsTextures[] = {"\CUP\WheeledVehicles\CUP_WheeledVehicles_Hilux\data\v2\Body_camo_3_CO.paa"};
+		textureList[]=
+		{
+			"Olive",
+			1
+		};
+		
+		class TransportWeapons {
+			class _xx_Galil {
+				weapon = "CUP_arifle_Galil_556_black";
+				count = "1*1";
+			};
+		};
+		
+		class TransportMagazines {
+			class _xx_Galil_mag {
+				magazine = "CUP_35Rnd_556x45_Galil_Mag";
+				count = "8*1";
+			};
+			
+			class _xx_Chemlight {
+				magazine = "Chemlight_yellow";
+				count = "2*1";
+			};
+			
+			class _xx_Smoke {
+				magazine = "SmokeShell";
+				count = "2*1";
+			};
+		};
+		
+		class TransportItems {
+			class _xx_FAK {
+				name = "FirstAidKit";
+				count = "4*1";
+			};
+			
+			class _xx_Medikit {
+				name = "Medikit";
+				count = "1*1";
+			};
+			
+			class _xx_ToolKit {
+				name = "ToolKit";
+				count = "1*1";
+			};
+		};
+		
+		class TransportBackpacks {
+		};
+
+        // custom attributes (do not delete)
+        ALiVE_orbatCreator_owned = 1;
+        ALiVE_orbatCreator_texture = "Camo";
+	};

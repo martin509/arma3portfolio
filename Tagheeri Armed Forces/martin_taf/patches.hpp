@@ -22,6 +22,8 @@ class CfgPatches {
 			
 			"TAF_M2", "TAF_M2_tripod", "TAF_DSHKM", "TAF_DSHKM_tripod", "TAF_SPG9", 
 			"TAF_ZU23", "TAF_D30", "TAF_D30_AT", "TAF_L16",
+
+			"B_TAF_Base_F", "B_TAF_Police_Base_F", "B_TAF_SF_Base_F",
 			
 			"B_TAF_TeamLeader", "B_TAF_rifleman_FAL", "B_TAF_rifleman",
 			"B_TAF_machinegunner", "B_TAF_autorifleman", 
